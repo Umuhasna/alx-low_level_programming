@@ -3,7 +3,7 @@
 /**
  * _islower - Entry point
  *
- * Description: Checks lowercase characters
+ * Description: Checks if c is lowercase character
  *
  * Return: 1, if c is lowercase
  * 0 otherwise
