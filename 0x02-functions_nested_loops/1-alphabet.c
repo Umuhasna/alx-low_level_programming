@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * print_alphabet - Entry point
  *
- * Description: Prints the alphabet, in lowercase, followed by a newline.
+ * Description: Print alphabet in lowercase followed by newline
  *
- * Return: Always 0
+ * Return: void
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	_putchar(c = 'a', c <= 'z', c++);
+	char letter;
 
-	return (0);
+	for (letter = 'a', letter <= 'z', letter++)
+		_putchar('letter');
+
+	_putchar('\n');
 }
