@@ -5,17 +5,17 @@
  *
  * Description: Checks lowercase characters
  *
- * Return: Always 0
+ * Return: 1, if c is lowercase
+ * 0 otherwise
  */
 int _islower(int c)
 {
-	if (_islower(c))
+	if (c >= 'a' && c <= 'z')
 	{
-		_putchar('1');
+		return (1);
 	}
 	else
 	{
-		_putchar('0');
+		return (0);
 	}
-	return (0);
 }
