@@ -5,7 +5,7 @@
  *
  * Description: prints the given character
  *
- * Result: Success 0.
+ * Result: Always 0 (Success)
  */
 int main(void)
 {
