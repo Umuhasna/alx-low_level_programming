@@ -4,13 +4,11 @@
  * _abs - Entry point
  *
  * Description: computes the absolute value of an integer
- * @int: the parameter
+ * @i: the parameter
  * Return: 0
  */
-int _abs(int)
+int _abs(int i)
 {
-	int i;
-
 	if (i >= 0)
 	{
 		return (i);
@@ -19,4 +17,5 @@ int _abs(int)
 	{
 		return (-i);
 	}
+	_putchar('\n');
 }
