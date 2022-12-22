@@ -11,20 +11,22 @@ char *cap_string(char *str)
 	int i, j;
 	int c[] = {32, 9, '\n', 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	i = 0;
-	j = 0;
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		while (j < 14)
+		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (str[i] == c[j] && str[i + 1] > 96 && str[i + 1] < 123)
-			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-			j++;
+			str[i] -= 32;
 		}
-		i++;
-		j = 0;
+		for (j = 0; j < 13; j++)
+		{
+			if (str[i] == c[j])
+			{
+				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+				{
+					str[i + 1] -= 32;
+				}
+			}
+		}
 	}
 	return (str);
 }
