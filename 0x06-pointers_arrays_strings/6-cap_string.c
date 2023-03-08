@@ -24,6 +24,10 @@ char *cap_string(char *str)
 				}
 			}
 		}
+		if (i == 0)
+		{
+			str[i] = str[i] - 32;
+		}
 	}
 	return (str);
 }
