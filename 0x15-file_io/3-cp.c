@@ -40,10 +40,14 @@ int main(int argc, char **argv)
 	}
 	fp_from = open(file_from, O_RDONLY);
 	if (fp_from == -1)
+	{
 		print_error(98, "Error: Can't read from file %s\n", file_from, -1);
+	}
 	fp_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if(fp_to == -1)
+	if (fp_to == -1)
+	{
 		print_error(99, "Error: Can't write %s\n", file_to, fp_from);
+	}
 	while ((nread = read(fp_from, buffer, BUFFER)) > 0)
 	{
 		written = write(fp_to, buffer, nread);
@@ -56,12 +60,13 @@ int main(int argc, char **argv)
 	{
 		print_error(98, "Error: Can't read from file %s\n", file_from, fp_to);
 	}
-	if (close (fp_from) == -1)
+	if (close(fp_from) == -1)
 	{
 		print_error(100, "Error: Can't close fd %d\n", file_from, fp_to);
 	}
 	if (close(fp_to) == -1)
+	{
 		print_error(100, "Error: Can't close fd %d\n", file_to, fp_from);
-
+	}
 	return (0);
 }
