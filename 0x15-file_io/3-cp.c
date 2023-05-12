@@ -15,6 +15,7 @@
 void print_error(int n, const char *msg, const char *filename, int fp)
 {
 	dprintf(STDERR_FILENO, msg, filename);
+
 	if (fp >= 0)
 		close(fp);
 
@@ -46,14 +47,14 @@ int main(int argc, char **argv)
 	fp_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fp_to == -1)
 	{
-		print_error(99, "Error: Can't write %s\n", file_to, fp_from);
+		print_error(99, "Error: Can't write to %s\n", file_to, fp_from);
 	}
 	while ((nread = read(fp_from, buffer, BUFFER)) > 0)
 	{
 		written = write(fp_to, buffer, nread);
 		if (written != nread)
 		{
-			print_error(99, "Error: Can't write %s\n", file_to, fp_from);
+			print_error(99, "Error: Can't write to %s\n", file_to, fp_from);
 		}
 	}
 	if (nread == -1)
